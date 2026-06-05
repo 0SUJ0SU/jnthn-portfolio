@@ -1,4 +1,4 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Big_Shoulders, Schibsted_Grotesk, Geist_Mono } from "next/font/google";
 import GrainOverlay from "@/components/shared/GrainOverlay";
 import "./globals.css";

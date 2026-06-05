@@ -1,4 +1,4 @@
-﻿export default function GrainOverlay() {
+export default function GrainOverlay() {
   return (
     <div
       aria-hidden="true"
