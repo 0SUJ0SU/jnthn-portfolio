@@ -1,16 +1,29 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+﻿import type { Metadata } from "next";
+import { Big_Shoulders, Schibsted_Grotesk, Geist_Mono } from "next/font/google";
+import GrainOverlay from "@/components/shared/GrainOverlay";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+// No fallback metrics exist for the consolidated Big Shoulders, so the adjusted
+// fallback can't be generated; opt out to keep the build warning-free.
+const bigShoulders = Big_Shoulders({
+  subsets: ["latin"],
+  axes: ["opsz"],
+  display: "swap",
+  variable: "--font-display",
+  adjustFontFallback: false,
+  fallback: ["sans-serif"],
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const schibstedGrotesk = Schibsted_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -24,10 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      className={`${bigShoulders.variable} ${schibstedGrotesk.variable} ${geistMono.variable}`}
+    >
+      <body className="antialiased">
+        <GrainOverlay />
         {children}
       </body>
     </html>
