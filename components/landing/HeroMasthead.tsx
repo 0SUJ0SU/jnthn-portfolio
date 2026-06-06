@@ -33,11 +33,11 @@ export default function HeroMasthead() {
           initial="enter"
           animate="rest"
           transition={{ duration: 0.7, ease: STREAK_EASE }}
-          className="block w-max whitespace-nowrap text-[clamp(5rem,30vw,26rem)]"
+          className="block w-max whitespace-nowrap text-[clamp(5rem,36vw,26rem)]"
         >
           JNTHN
         </motion.span>
-        <span className="absolute left-1/2 top-full mt-6 w-max max-w-[90vw] -translate-x-1/2 text-center font-mono text-[0.6rem] font-bold uppercase leading-relaxed tracking-[0.2em] text-rust md:text-xs">
+        <span className="absolute left-1/2 top-full mt-4 w-max max-w-[90vw] -translate-x-1/2 text-center font-mono text-[0.6rem] font-bold uppercase leading-relaxed tracking-[0.2em] text-rust md:text-xs">
           <motion.span
             custom={bioStreakOffset}
             variants={bioStreakVariants}
@@ -46,9 +46,7 @@ export default function HeroMasthead() {
             transition={{ duration: 0.6, ease: STREAK_EASE, delay: STREAK_STAGGER_SECONDS }}
             className="block"
           >
-            <span className="block">JNTHN is the folio of</span>
-            <span className="block">Jonathan [ JOJO ] Sugondo</span>
-            <span className="block">Developer, Analyst &amp; Car Enthusiast</span>
+            <span className="block">- PORTFOLIO -</span>
           </motion.span>
         </span>
       </h1>
